@@ -2,6 +2,10 @@
 //Creo useState para iniciar sesion. Lo creo como 'objeto', compuesto por "email" y "password" vacios
 //Creo 'const' para extraer del usuario "email" y "password" y agrego 'value{}' en cada 'input'
 //Para guardar el usuario uso 'onChange = (e)'
+//En este punto puedo lo que se tipee se debe ver en el browser en Inspect/Components
+//Agrego onSubmit={onSubmit} al 'form' y creo la 'const con 'e.prevent.default()'
+//Agrego el 'import {Link}' y el 'link' debajo del 'form' para que el usuario pueda crear una cuenta
+//de esta manera es redirigido a Nueva Cuenta. Si hago click debe funcionar.
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
@@ -24,7 +28,7 @@ const Login = () => {
     });
   };
 
-  //cuando el ususario quiere iniciar sesion (clickea Submit)
+  //cuando el ususario quiere iniciar sesion (clickea Submit/ click en boton)
   const onSubmit = (e) => {
     e.preventDefault();
 
