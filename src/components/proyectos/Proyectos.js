@@ -1,3 +1,6 @@
+//195. Creo esta pagina + Creo 'Sidebar.js'
+//196.
+
 import React from "react";
 import Sidebar from "../layout/Sidebar";
 
