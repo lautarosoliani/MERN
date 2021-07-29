@@ -1,3 +1,8 @@
+//193.
+//Creo useState para iniciar sesion. Lo creo como 'objeto', compuesto por "email" y "password" vacios
+//Creo 'const' para extraer del usuario "email" y "password" y agrego 'value{}' en cada 'input'
+//Para guardar el usuario uso 'onChange = (e)'
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -11,6 +16,7 @@ const Login = () => {
   //extraer de usuario (dentro de los input pongo value="email" & value="password")
   const { email, password } = usuario;
 
+  //Guardar ususario
   const onChange = (e) => {
     guardarUsuario({
       ...usuario,
