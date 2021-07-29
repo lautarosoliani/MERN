@@ -34,22 +34,24 @@ const NuevaCuenta = () => {
     e.preventDefault();
 
     //falta validar que no haya campos vacios
-    //falta 'pasarlo al action'
+    //falta password de minimo 8 caracteres
+    //falta los 2 campos deben ser iguales
+    //falta pasarlo a la 'action'
   };
 
   return (
     <div className="form-usuario">
       <div className="contenedor-form sombra-dark">
-        <h1>Crea una cuenta</h1>
+        <h1>MERN Project - Lautaro Soliani</h1>
 
         <form onSubmit={onSubmit}>
           <div className="campo-form">
-            <label htmlFor="nombre">Nombre</label>
+            <label htmlFor="nombre">Name</label>
             <input
               type="text"
               id="nombre"
               name="nombre"
-              placeholder="Tu Nombre"
+              placeholder="Your name"
               value={nombre}
               onChange={onChange}
             />
@@ -60,7 +62,7 @@ const NuevaCuenta = () => {
               type="email"
               id="email"
               name="email"
-              placeholder="Tu Email"
+              placeholder="Your Email"
               value={email}
               onChange={onChange}
             />
@@ -71,18 +73,19 @@ const NuevaCuenta = () => {
               type="password"
               id="password"
               name="password"
-              placeholder="Tu Password"
+              placeholder="Password"
               value={password}
               onChange={onChange}
             />
           </div>
           <div className="campo-form">
-            <label htmlFor="confirmar">Confirmar Password</label>
+            <label htmlFor="confirmar">Confirm Password</label>
             <input
               type="password"
               id="confirmar"
               name="confirmar"
-              placeholder="Repite tu Password"
+              placeholder="
+              Repeat your password"
               value={confirmar}
               onChange={onChange}
             />
@@ -91,7 +94,7 @@ const NuevaCuenta = () => {
             <input
               type="submit"
               className="btn btn-primario btn-block"
-              value="Registrarme"
+              value="Register"
             />
           </div>
         </form>
