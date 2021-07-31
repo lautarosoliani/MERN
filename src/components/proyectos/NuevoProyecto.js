@@ -5,9 +5,13 @@
 // Agrego 'value' y onChange' al primer input + Destructuring
 // Falta el 'form' para cuando el usuario haga 'submit' asi que agrego 'onSubmit en el form
 
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useContext } from "react";
+import proyectoContext from "../../context/proyectos/proyectoContext";
 
 const NuevoProyecto = () => {
+  const proyectosContext = useContext(proyectoContext);
+  const { formulario } = proyectosContext;
+
   //State para proyecto
   const [proyecto, guardarProyecto] = useState({
     nombre: "",
@@ -36,22 +40,23 @@ const NuevoProyecto = () => {
       <button type="button" className="btn btn-block btn-primario">
         Add Project
       </button>
-
-      <form className="formulario-nuevo-proyecto" onSubmit={onSubmitProyecto}>
-        <input
-          type="text"
-          className="input-text"
-          placeholder="Name your project"
-          name="nombre"
-          value={nombre}
-          onChange={onChangeProyecto}
-        />
-        <input
-          type="submit"
-          className="btn btn-primario btn-block"
-          value="Add Project"
-        />
-      </form>
+      {formulario ? (
+        <form className="formulario-nuevo-proyecto" onSubmit={onSubmitProyecto}>
+          <input
+            type="text"
+            className="input-text"
+            placeholder="Name your project"
+            name="nombre"
+            value={nombre}
+            onChange={onChangeProyecto}
+          />
+          <input
+            type="submit"
+            className="btn btn-primario btn-block"
+            value="Add Project"
+          />
+        </form>
+      ) : null}
     </Fragment>
   );
 };
