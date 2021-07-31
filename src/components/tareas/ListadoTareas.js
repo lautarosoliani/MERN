@@ -1,5 +1,9 @@
-//Listado que va a contener todas las tareas de ese proyecto especifcio
-//
+// 201.
+// Listado que va a contener todas las tareas de ese proyecto especifcio
+// Creo un array con 'nombre' y 'estado' que luego voy a usar
+// Creo Fragment con 'H2' y 'tareasProyecto.length' con 'operador ternario'
+// para cuando no haya 'tareasProyecto' y para cuando si los haya
+
 import React, { Fragment } from "react";
 import Tarea from "./Tarea";
 
@@ -22,9 +26,11 @@ const ListadoTareas = () => {
         ) : (
           tareasProyecto.map((tarea) => <Tarea tarea={tarea} />)
         )}
+        <button type="button" className="btn btn-eliminar">
+          Delete Project &times;
+        </button>
       </ul>
     </Fragment>
   );
 };
 export default ListadoTareas;
-// 201
