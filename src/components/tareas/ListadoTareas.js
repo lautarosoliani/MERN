@@ -4,10 +4,20 @@
 // Creo Fragment con 'H2' y 'tareasProyecto.length' con 'operador ternario'
 // para cuando no haya 'tareasProyecto' y para cuando si los haya
 
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import Tarea from "./Tarea";
+import proyectoContext from "../../context/proyectos/proyectoContext";
 
 const ListadoTareas = () => {
+  const proyectosContext = useContext(proyectoContext);
+  const { proyecto } = proyectosContext;
+
+  //Si no hay proyecto seleccionado:
+  if (!proyecto) return <h2>Select a project</h2>;
+
+  //Array destructuring para extraer el proyecto actual
+  const [proyectoActual] = proyecto;
+
   const tareasProyecto = [
     { nombre: "Choose Platform", estado: true },
     { nombre: "Choose Colors", estado: false },
@@ -17,7 +27,7 @@ const ListadoTareas = () => {
 
   return (
     <Fragment>
-      <h2>Project: Online Shop</h2>
+      <h2>Project: {proyectoActual.nombre}</h2>
       <ul className="listado-tareas">
         {tareasProyecto.length === 0 ? (
           <li className="tarea">
