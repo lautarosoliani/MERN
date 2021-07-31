@@ -6,6 +6,9 @@ const Barra = () => {
       <p className="nombre-usuario">
         <span>Hola Lautaro</span>
       </p>
+      <nav className="nav-principal">
+        <a href="#!">Cerrar Sesión</a>
+      </nav>
     </header>
   );
 };
