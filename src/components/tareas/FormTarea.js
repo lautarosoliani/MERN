@@ -17,6 +17,7 @@ const FormTarea = () => {
     validarTarea,
     obtenerTareas,
     actualizarTarea,
+    limpiarTarea,
   } = tareasContext;
 
   //Effect para EDITAR tareas
@@ -69,6 +70,9 @@ const FormTarea = () => {
     } else {
       //actualizar tarea existente
       actualizarTarea(tarea);
+
+      //Elimina tarea seleccionada del State
+      limpiarTarea();
     }
 
     // Obtener y filtrar las tareas del proyecto actual
