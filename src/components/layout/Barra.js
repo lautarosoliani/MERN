@@ -4,10 +4,10 @@ const Barra = () => {
   return (
     <header className="app-header">
       <p className="nombre-usuario">
-        <span>Hola Lautaro</span>
+        <span>Welcome</span>
       </p>
       <nav className="nav-principal">
-        <a href="#!">Cerrar Sesión</a>
+        <a href="#!">Log Out</a>
       </nav>
     </header>
   );

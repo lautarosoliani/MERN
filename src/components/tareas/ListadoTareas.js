@@ -18,12 +18,7 @@ const ListadoTareas = () => {
   //Array destructuring para extraer el proyecto actual
   const [proyectoActual] = proyecto;
 
-  const tareasProyecto = [
-    { nombre: "Choose Platform", estado: true },
-    { nombre: "Choose Colors", estado: false },
-    { nombre: "Choose Payment Method", estado: true },
-    { nombre: "Choose Hosting", estado: false },
-  ];
+  const tareasProyecto = [];
 
   //Eliminar un proyecto
   const onClickEliminar = () => {
@@ -36,7 +31,7 @@ const ListadoTareas = () => {
       <ul className="listado-tareas">
         {tareasProyecto.length === 0 ? (
           <li className="tarea">
-            <p>There are no Tasks</p>
+            <p>There are no tasks</p>
           </li>
         ) : (
           tareasProyecto.map((tarea) => <Tarea tarea={tarea} />)
