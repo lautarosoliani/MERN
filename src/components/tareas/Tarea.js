@@ -13,7 +13,7 @@ const Tarea = ({ tarea }) => {
   const tareasContext = useContext(tareaContext);
   const { eliminarTarea, obtenerTareas } = tareasContext;
 
-  //Destructuring
+  //Destructuring de proyectoActual
   const [proyectoActual] = proyecto;
   //Funcion que se ejecuta cuando el usuario presiona el boton 'eliminar tarea'
   const tareaEliminar = (id) => {
